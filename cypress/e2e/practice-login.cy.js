@@ -31,4 +31,28 @@ describe('Practice Test Automation Login', () => {
 
     loginPage.assertErrorMessage('Your password is invalid!');
   });
+
+    it('Negative login with invalid password 1', () => {
+    loginPage.enterUsername('student');
+    loginPage.enterPassword('incorrectPassword');
+    loginPage.submit();
+
+    loginPage.assertErrorMessage('Your password is invalid!');
+  });
+
+    it('Negative login with invalid password 2', () => {
+    loginPage.enterUsername('student');
+    loginPage.enterPassword('incorrectPassword');
+    loginPage.submit();
+
+    loginPage.assertErrorMessage('Your password is invalid!');
+  });
+
+    it('Negative login with invalid password 3', () => {
+    loginPage.enterUsername('student');
+    loginPage.enterPassword('incorrectPassword');
+    loginPage.submit();
+
+    loginPage.assertErrorMessage('Your password is invalid!');
+  });
 });
