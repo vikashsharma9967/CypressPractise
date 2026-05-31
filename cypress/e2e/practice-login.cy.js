@@ -55,4 +55,12 @@ describe('Practice Test Automation Login', () => {
 
     loginPage.assertErrorMessage('Your password is invalid!');
   });
+
+      it('Negative login with invalid password 4', () => {
+    loginPage.enterUsername('student');
+    loginPage.enterPassword('incorrectPassword');
+    loginPage.submit();
+
+    loginPage.assertErrorMessage('Your password is invalid!');
+  });
 });
