@@ -1,6 +1,8 @@
+const { practiceLoginPath } = require('./endpoints');
+
 class LoginPage {
   constructor() {
-    this.url = 'https://practicetestautomation.com/practice-test-login/';
+    this.path = practiceLoginPath;
     this.usernameInput = '#username';
     this.passwordInput = '#password';
     this.submitButton = '#submit';
@@ -10,7 +12,7 @@ class LoginPage {
   }
 
   visit() {
-    cy.visit(this.url);
+    cy.visit(this.path);
   }
 
   enterUsername(username) {

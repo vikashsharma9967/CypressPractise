@@ -12,7 +12,7 @@ module.exports = defineConfig({
   },
 
   e2e: {
-    baseUrl: 'https://oceanwp.org/demos/',
+    baseUrl: 'https://practicetestautomation.com',
     viewportWidth: 1280,
     viewportHeight: 720,
     defaultCommandTimeout: 8000,
@@ -20,13 +20,13 @@ module.exports = defineConfig({
     screenshotOnRunFailure: true,
 
     setupNodeEvents(on, config) {
-        // Change this line:
-        require('cypress-terminal-report/src/installLogsPrinter')(on);
+      // 2. Initialize HTML Reporter Plugin
+      require('cypress-mochawesome-reporter/plugin')(on);
 
-        // To this (often works if the /src/ path fails):
-        require('cypress-terminal-report/src/installLogsPrinter')(on, {
-          printLogsToConsole: 'always',
-        });
+      // 3. Initialize Terminal Logger (logs all clicks/actions to report)
+      require('cypress-terminal-report/src/installLogsPrinter')(on, {
+        printLogsToConsole: 'always',
+      });
 
       // 4. Browser Launch Strategy
       on('before:browser:launch', (browser = {}, launchOptions) => {
